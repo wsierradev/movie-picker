@@ -1,15 +1,14 @@
 import React from "react"
 import axios from "axios"
-import { Link } from "gatsby"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Card from "react-bootstrap/Card"
-import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'font-awesome/css/font-awesome.min.css';
+import Header from "../components/header"
 
 export default class Movie extends React.Component {
   constructor(props) {
@@ -62,18 +61,9 @@ export default class Movie extends React.Component {
 
   render() {
     return (
+    
       <div>
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="#home">Movie Night</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link><Link to="/random/">Random Movie</Link></Nav.Link>
-              <Nav.Link><Link to="/list/">Movie List</Link></Nav.Link>
-
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Header />
         <Container className="mt-4">
           <Row>
             <Col>
