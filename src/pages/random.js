@@ -6,9 +6,9 @@ import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Card from "react-bootstrap/Card"
+import Header from "../components/header"
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'font-awesome/css/font-awesome.min.css';
-import Header from "../components/header"
 
 export default class Movie extends React.Component {
   constructor(props) {
@@ -18,26 +18,33 @@ export default class Movie extends React.Component {
       movieInfo: [],
     }
   }
+
   componentDidMount() {
-    const parseStr = query => {
-      return query.replace(" ", "+")
-    }
-    axios
-      .get(`https://random-movie-picker-kazan.herokuapp.com/randommovie`)
-      .then(res => {
-        const movie = res.data
-        this.setState({ movie: movie })
-        const title = parseStr(movie.title)
-        const year = movie.releaseYear
-        return axios.get(
-          `https://www.omdbapi.com/?t=${title}&y=${year}&apikey=95dd8229`
-        )
-      })
-      .then(res => {
-        this.setState({ movieInfo: res.data })
-        this.setInfo()
-      })
+    this.getMovie()
   }
+
+  getMovie =  () => {
+     axios
+    .get(`https://random-movie-picker-kazan.herokuapp.com/randommovie`)
+    .then(res => {
+      const movie = res.data
+      this.setState({ movie: movie })
+      const title = this.parseStr(movie.title)
+      const year = movie.releaseYear
+      return axios.get(
+        `https://www.omdbapi.com/?t=${title}&y=${year}&apikey=95dd8229`
+      )
+    })
+    .then(res => {
+      this.setState({ movieInfo: res.data })
+      this.setInfo()
+    })
+  }
+
+  parseStr = (query) => {
+    return query.replace(" ", "+")
+  }
+
 
 
   setInfo = () => {
@@ -61,10 +68,10 @@ export default class Movie extends React.Component {
 
   render() {
     return (
-    
       <div>
         <Header />
-        <Container className="mt-4">
+       
+          <Container className="mt-4">
           <Row>
             <Col>
               <Card>
@@ -95,7 +102,8 @@ export default class Movie extends React.Component {
                 <p className="text-right ">{this.state.movieInfo.Runtime}</p>
               </div>
 
-              <Row><ButtonGroup className="ml-auto mr-2">{this.state.movieInfo.Genre}</ButtonGroup>
+              <Row>
+                <ButtonGroup className="ml-auto mr-2">{this.state.movieInfo.Genre}</ButtonGroup>
               </Row>
               <Row className="mt-5 ml-2">
                 <Col className="ml-4" align="center"><i className="fa fa-3x fa-imdb" aria-hidden="true"></i></Col>
@@ -107,13 +115,12 @@ export default class Movie extends React.Component {
                 <Col className="ml-4" align="center"> <b> {this.state.movieInfo.imdbRating}</b></Col>
                 <Col className="ml-4" align="center"><b>{this.state.movieInfo.rtRating}</b></Col>
                 <Col className="ml-4" align="center"><b>{this.state.movieInfo.mcRating}</b></Col>
-
               </Row>
+              <Row className="mt-4 ">{ this.state.movie.hasBeenWatched ?   <Button className="btn-block" variant="warning">Watched</Button> :   <Button className="btn-block" variant="success">Not Watched</Button>}</Row>
             </Col>
-
           </Row>
-
         </Container>
+    
       </div>
     )
   }
