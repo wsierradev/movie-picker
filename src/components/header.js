@@ -14,8 +14,8 @@ export default function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Item as="li"><Link to="/random/">Random Movie</Link></Nav.Item>
-          <Nav.Item as="li"><Link to="/list/">Movie List</Link></Nav.Item>
+          <Nav.Item as="li"><Link to="/random/" className="nav-link">Random Movie</Link></Nav.Item>
+          <Nav.Item as="li"><Link to="/list/" className="nav-link">Movie List</Link></Nav.Item>
 
         </Nav>
       </Navbar.Collapse>
