@@ -6,7 +6,7 @@ export default function PosterLayout(props) {
   return (
     <Col>
       <Image
-        style={{ height: "50vw" }}
+        style={{ height: "48vw" }}
         src={props.Poster}
         alt={props.Title}
         rounded
