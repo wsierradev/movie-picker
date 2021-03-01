@@ -3,15 +3,11 @@ import axios from "axios"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
-import Button from "react-bootstrap/Button"
-import ButtonGroup from "react-bootstrap/ButtonGroup"
-import Card from "react-bootstrap/Card"
 import Image from "react-bootstrap/Image"
 
 import Header from "../components/header"
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'font-awesome/css/font-awesome.min.css';
-import {Router} from "@reach/router"
 
 export default class List extends React.Component {
   constructor(props) {
