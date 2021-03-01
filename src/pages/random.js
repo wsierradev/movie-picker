@@ -1,14 +1,16 @@
 import React from "react"
 import axios from "axios"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Container from "react-bootstrap/Container"
-import Button from "react-bootstrap/Button"
-import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Header from "../components/header"
+import PosterLayout from "../components/PosterLayout"
+import {
+  Button,
+  ButtonGroup,
+  Col,
+  Container,
+  Row
+} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'font-awesome/css/font-awesome.min.css';
-import PosterLayout from "../components/PosterLayout"
 
 export default class Movie extends React.Component {
   constructor(props) {
