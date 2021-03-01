@@ -11,7 +11,6 @@ export default function Home() {
       <img src="https://source.unsplash.com/random/400x200" alt="" />
       <Link to="/random/">Random Movie</Link>
       <Link to="/list/">Movie List</Link>
-
     </div>
   )
 }
