@@ -44,7 +44,6 @@ export default class Movie extends React.Component {
     return query.replace(" ", "+")
   }
 
-
   handleClick = () => {
     this.getMovie()
   }
@@ -67,7 +66,6 @@ export default class Movie extends React.Component {
 
     this.setState({ movieInfo: movieInfo })
   }
-
 
   render() {
     return (
