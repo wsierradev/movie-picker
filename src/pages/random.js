@@ -1,7 +1,9 @@
 import React from "react"
 import axios from "axios"
-import Header from "../components/header"
-import PosterLayout from "../components/PosterLayout"
+import {
+  Header,
+  PosterLayout
+} from '../components';
 import {
   Button,
   ButtonGroup,
