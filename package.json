@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "movie_picker_frontend",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Front End accompanies the 'Random Movie Picker' service.",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -14,12 +14,12 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "font-awesome": "^4.7.0",
-    "gatsby": "^2.26.1",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.4.0",
-    "react-dom": "^16.12.0"
+    "bootstrap": "4.5.3",
+    "font-awesome": "4.7.0",
+    "gatsby": "2.26.1",
+    "react": "16.12.0",
+    "react-bootstrap": "1.4.0",
+    "react-dom": "16.12.0"
   },
   "devDependencies": {
     "prettier": "2.1.2"

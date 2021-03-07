@@ -16,7 +16,6 @@ export default function Header() {
         <Nav className="mr-auto">
           <Nav.Item as="li"><Link to="/random/" className="nav-link">Random Movie</Link></Nav.Item>
           <Nav.Item as="li"><Link to="/list/" className="nav-link">Movie List</Link></Nav.Item>
-
         </Nav>
       </Navbar.Collapse>
     </Navbar>
