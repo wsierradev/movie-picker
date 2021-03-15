@@ -47,8 +47,20 @@ export default class Movie extends React.Component {
     return query.replace(" ", "+")
   }
 
+  postMovieList =  () => {
+    axios
+   .post(`https://random-movie-picker-kazan.herokuapp.com/movie`, {
+    "category": "90sMoviesWeLoved",
+    "hasBeenWatched": false,
+    "poster": "https://random-movie-picker.s3.amazonaws.com/corky_romano/poster.jpg",
+    "releaseYear": "1996",
+    "title": "Testy123"
+  })
+ }
+
   handleClick = () => {
     this.getMovie()
+    this.postMovieList()
   }
 
   setInfo = () => {

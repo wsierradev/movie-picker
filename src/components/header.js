@@ -28,9 +28,11 @@ export default function Header() {
         <Nav className="mr-auto">
           <Nav.Item as="li"><Link to="/random/" className="nav-link">Random Movie</Link></Nav.Item>
           <Nav.Item as="li"><Link to="/list/" className="nav-link">Movie List</Link></Nav.Item>
+          <Nav.Item as="li"><Link to="/addMovie/" className="nav-link">Add Movie</Link></Nav.Item>
+
         <NavDropdown title="Categories" id="basic-nav-dropdown">
         {categories.map((category) => 
-  <NavDropdown.Item as="li"><Link to= {`/${category.value}/`} className="nav-link">{category.display}</Link></NavDropdown.Item>
+  <NavDropdown.Item key="ß" as="li"><Link to= {`/${category.value}/`} className="nav-link">{category.display}</Link></NavDropdown.Item>
    )}
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
