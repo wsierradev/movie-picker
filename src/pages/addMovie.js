@@ -21,7 +21,7 @@ export default class AddMovie extends React.Component {
     }
 
     handleClick = () => {
-        this.postMovieList()
+        this.postMovie()
     }
 
     postMovie =  () => {
@@ -68,7 +68,7 @@ export default class AddMovie extends React.Component {
           <input type="password" className="form-control" placeholder={this.state.title}></input>
         </div>
 
-        <button className="btn btn-primary" onClick={this.postMovie()}>Submit</button>
+        <button className="btn btn-primary" onClick={this.handleClick()}>Submit</button>
       </form>
       </div>
       </div>
